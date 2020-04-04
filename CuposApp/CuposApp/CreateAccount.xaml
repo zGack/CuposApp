@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#22252A"
+             mc:Ignorable="d"
+             x:Class="CuposApp.CreateAccount">
+
+    <StackLayout Margin="20,35,20,25">
+        <!-- Place new controls here -->
+        <Label Text="Create Account" 
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontAttributes="Bold"
+               Margin="0,40,0,20"
+               FontSize="40"
+               VerticalOptions="Center" />
+
+        <Entry Placeholder="Email"
+               x:Name="email_entry"
+               Margin="35,0,35,20"
+               TextColor="#FFFFFF"
+               PlaceholderColor="#6F7781"
+               
+               />
+
+        <Entry Placeholder="Password"
+               x:Name="passw_entry"
+               IsPassword="True"
+               Margin="35,0,35,10"
+               TextColor="#FFFFFF"
+               PlaceholderColor="#6F7781"
+               />
+
+
+        <Button Text="Sign in"
+                Clicked="OnClickSignin"
+                TextColor="#FFFFFF"
+                BackgroundColor="#0066FF"
+                Margin="35,50,35,10"/>
+
+    </StackLayout>
+
+</ContentPage>

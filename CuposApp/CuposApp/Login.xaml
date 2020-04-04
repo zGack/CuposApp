@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#22252A"
+             mc:Ignorable="d"
+             x:Class="CuposApp.Login">
+
+    <StackLayout Margin="20,0,20,25">
+        <!-- Place new controls here -->
+        <Label Text="Cupos Cali App" 
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontAttributes="Bold"
+               Margin="0,0,0,20"
+               FontSize="40"
+               VerticalOptions="Center" />
+        
+        <Label Text="Welcome to the best app that manage your cupos routes!" 
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontSize="20"
+               HorizontalTextAlignment="Center"
+               Margin="60,0,60,20"
+               VerticalOptions="Center" />
+
+        <Entry Placeholder="Email"
+               x:Name="email_entry"
+               Margin="35,0,35,20"
+               TextColor="#FFFFFF"
+               PlaceholderColor="#6F7781"
+               Completed="OnEntryCompleted"
+               />
+
+        <Entry Placeholder="Password"
+               x:Name="passw_entry"
+               IsPassword="True"
+               Margin="35,0,35,10"
+               TextColor="#FFFFFF"
+               PlaceholderColor="#6F7781"
+               Completed="OnEntryCompleted"
+               />
+
+        <StackLayout Orientation="Horizontal"
+                     Margin="35,0,35,0">
+
+            <Button Text="Create Account"
+                    Clicked="OnClickCreateAccount"
+                    HorizontalOptions="StartAndExpand"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="#6F7781"
+                    Padding="0,0,0,0"
+                    Scale="0.8"
+                />
+
+            <Button Text="Forgot my password"
+                    Clicked="OnClickForgotPassword"
+                    HorizontalOptions="EndAndExpand"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="#6F7781"
+                    Padding="0,0,0,0"
+                    Scale="0.8"
+                />
+        </StackLayout>
+
+        
+        <Button Text="log in"
+                Clicked="OnClickLogin"
+                TextColor="#FFFFFF"
+                BackgroundColor="#0066FF"
+                Margin="35,50,35,10"/>
+
+        <!--<Label Text="The easiest way to find and post cupos in your city" 
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontSize="20"
+               HorizontalTextAlignment="Center"
+               Margin="60,0,60,20"
+               VerticalOptions="EndAndExpand" />-->
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="#22252A"
+             mc:Ignorable="d"
+             x:Class="CuposApp.MainView">
+
+    <StackLayout Margin="20,35,20,25">
+        <!-- Place new controls here -->
+        <Label Text="Welcome!" 
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontAttributes="Bold"
+               Margin="0,40,0,20"
+               FontSize="40"
+               VerticalOptions="Center" />
+
+        <StackLayout Orientation="Horizontal"
+                     Margin="20,0,20,30">
+            <Label Text="Your Email: " 
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontSize="20"/>
+            <Label Text="{Binding Email}" 
+               x:Name="userEmail"
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF"
+               FontSize="20"/>
+        </StackLayout>
+
+        <Label Text="User in the Database " 
+               Margin="20,0,0,0"
+               HorizontalOptions="StartAndExpand"
+               TextColor="#FFFFFF"
+               FontSize="20"/>
+
+        <ListView x:Name="usersDB"
+                  Margin="30,0,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Email}"
+                              Detail="{Binding Password}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        
+
+        <Button Text="log out"
+                Clicked="OnClickLogout"
+                TextColor="#FFFFFF"
+                BackgroundColor="#0066FF"
+                Margin="35,50,35,10"/>
+
+    </StackLayout>
+
+</ContentPage>
