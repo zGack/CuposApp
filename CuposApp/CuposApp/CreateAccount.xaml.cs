@@ -31,7 +31,7 @@ namespace CuposApp
                 email_entry.Text = passw_entry.Text = string.Empty;
 
                 //await Navigation.PopAsync();
-                await Navigation.PushAsync(new MainView(user));
+                await Navigation.PushAsync(new Login());
             }
         }
 

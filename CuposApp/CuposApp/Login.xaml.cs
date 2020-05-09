@@ -28,20 +28,28 @@ namespace CuposApp
                     Email = email_entry.Text,
                     Password = passw_entry.Text
                 };
-                
-                if (App.Database.GetUserByLoginAsync(user).IsFaulted)
+
+                try
                 {
-                    await Navigation.PushAsync(new MainView(user));
-                    //await DisplayAlert("Alert", "Hey"+ App.Database.GetUserByLoginAsync(user).IsFaulted, "OK");
-                }
-                else
+                    string dbEmail = (App.Database.GetUserByEmailAsync(user.Email).Result.Email).ToString();
+                    string dbPassw = (App.Database.GetUserByPassAsync(user.Password).Result.Password).ToString();
+                    if (dbEmail == user.Email && dbPassw == user.Password)
+                    {
+                        //Application.Current.MainPage = new MainView(user);
+                        await Navigation.PushAsync(new MainView(user));
+                    }
+
+                } catch (AggregateException)
                 {
-                    await DisplayAlert("Alert", "Wrong Email or Password", "OK");
+                    await DisplayAlert("Error","Wrong email or password.","OK");
                 }
+
             }
                 
             
         }
+
+       
 
         async void OnClickCreateAccount(object sender, EventArgs e)
         {
@@ -50,7 +58,7 @@ namespace CuposApp
 
         async void OnClickForgotPassword(object sender, EventArgs e)
         {
-            await DisplayAlert("Alert", "Password forgot", "OK");
+            await Navigation.PushAsync(new ForgotPassword());
         }
 
         /** Lifecycle State Login entrys persistens **/
@@ -68,5 +76,6 @@ namespace CuposApp
             (Application.Current as App).DisplayTextPassw = passw_entry.Text;
         }
         /** ======================================== **/
+
     }
 }

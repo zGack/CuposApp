@@ -7,8 +7,7 @@
              mc:Ignorable="d"
              x:Class="CuposApp.MainView">
 
-    <StackLayout Margin="20,35,20,25">
-        <!-- Place new controls here -->
+    <!--<StackLayout Margin="20,35,20,25">
         <Label Text="Welcome!" 
                HorizontalOptions="Center"
                TextColor="#FFFFFF"
@@ -54,6 +53,59 @@
                 BackgroundColor="#0066FF"
                 Margin="35,50,35,10"/>
 
-    </StackLayout>
+    </StackLayout>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Show database"
+                     Order="Secondary"
+                     Priority="0"
+                     Clicked="onUsersDatabase"
+                     />
+        <ToolbarItem Text="Log Out"
+                     Order="Secondary"
+                     Priority="0"
+                     Clicked="OnClickLogout"
+                     />
+        
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0"
+                         Padding="60,0">
+                <StackLayout Orientation="Horizontal"
+                         WidthRequest="500"
+                         >
+                    <Image Source="ic_white_user2.png"
+                       WidthRequest="60"
+                       HeightRequest="60"
+                       Margin="0,0,10,0"/>
+                    <Label Text="{Binding Email}"
+                       x:Name="userEmail"
+                       TextColor="#FFF"
+                       FontSize="20"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <SearchBar Placeholder="Search routes"
+                           TextColor="#FFF"
+                           PlaceholderColor="#8d99ae"
+                           />
+
+            </StackLayout>
+
+            
+        </Grid>
+
+    </ContentPage.Content>
 
 </ContentPage>

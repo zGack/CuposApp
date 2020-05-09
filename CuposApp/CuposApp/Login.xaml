@@ -7,8 +7,13 @@
              mc:Ignorable="d"
              x:Class="CuposApp.Login">
 
-    <StackLayout Margin="20,0,20,25">
-        <!-- Place new controls here -->
+    <!--<StackLayout Margin="20,0,20,25">
+        
+
+        <Image Source="cuposAppLogo.png" 
+               HorizontalOptions="Center"
+               WidthRequest="{OnPlatform Android=125, iOS=125}"
+               Margin="0,0,0,0"/>
         <Label Text="Cupos Cali App" 
                HorizontalOptions="Center"
                TextColor="#FFFFFF"
@@ -36,14 +41,15 @@
         <Entry Placeholder="Password"
                x:Name="passw_entry"
                IsPassword="True"
-               Margin="35,0,35,10"
+               Margin="35,0,35,0"
                TextColor="#FFFFFF"
                PlaceholderColor="#6F7781"
                Completed="OnEntryCompleted"
                />
 
         <StackLayout Orientation="Horizontal"
-                     Margin="35,0,35,0">
+                     
+                     Margin="30,0,0,0">
 
             <Button Text="Create Account"
                     Clicked="OnClickCreateAccount"
@@ -54,16 +60,18 @@
                     FontAttributes="Bold"
                     TextColor="#6F7781"
                     Padding="0,0,0,0"
+                    Margin="0,0,0,0"
                     Scale="0.8"
                 />
 
-            <Button Text="Forgot my password"
+            <!<Button Text="Forgot my pass"
                     Clicked="OnClickForgotPassword"
-                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Start"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
                     FontSize="15"
                     FontAttributes="Bold"
+                    Margin="0,0,0,0"
                     TextColor="#6F7781"
                     Padding="0,0,0,0"
                     Scale="0.8"
@@ -77,14 +85,88 @@
                 BackgroundColor="#0066FF"
                 Margin="35,50,35,10"/>
 
-        <!--<Label Text="The easiest way to find and post cupos in your city" 
+        <!<Label Text="The easiest way to find and post cupos in your city" 
                HorizontalOptions="Center"
                TextColor="#FFFFFF"
                FontSize="20"
                HorizontalTextAlignment="Center"
                Margin="60,0,60,20"
-               VerticalOptions="EndAndExpand" />-->
+               VerticalOptions="EndAndExpand" />
 
-    </StackLayout>
+    </StackLayout>-->
 
+    <ContentPage.Content>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" 
+                   Source="cuposAppLogo.png"
+                   WidthRequest="120"
+                   HeightRequest="120"
+                   Margin="0,0,0,0"/>
+
+            <StackLayout Grid.Row="1" 
+                         Padding="50,20">
+                
+                <Entry Placeholder="Email"
+                       x:Name="email_entry"
+                       TextColor="#FFFFFF"
+                       PlaceholderColor="#6F7781"
+                       Completed="OnEntryCompleted"
+                       />
+
+                <Entry Placeholder="Password"
+                       x:Name="passw_entry"
+                       IsPassword="True"
+                       TextColor="#FFFFFF"
+                       PlaceholderColor="#6F7781"
+                       Completed="OnEntryCompleted"
+                       />
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+                    <!--<Label Text="Create Account"
+                           x:Name="create_account"
+                           TextColor="#FFF">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OnClickCreateAccounts}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="Forgot my password"
+                           x:Name="forgot_label"
+                           TextColor="#FFF"
+                           HorizontalOptions="EndAndExpand"/>-->
+                    <Button Text="Create Account"
+                            Clicked="OnClickCreateAccount"
+                            Padding="0"
+                            Margin="0"
+                            FontSize="10"
+                            BackgroundColor="#22252A"
+                            TextColor="#FFF"/>
+                    <Button Text="Forgot my password"
+                            Clicked="OnClickForgotPassword"
+                            Padding="0"
+                            Margin="0"
+                            FontSize="10"
+                            HorizontalOptions="EndAndExpand"
+                            BackgroundColor="#22252A"
+                            TextColor="#FFF"/>
+
+                </StackLayout>
+
+                <Button Text="log in"
+                    Clicked="OnClickLogin"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#0066FF"/>
+            </StackLayout>
+
+        </Grid>
+        
+    </ContentPage.Content>
+    
 </ContentPage>
